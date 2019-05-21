@@ -1,0 +1,40 @@
+{
+
+  "description": "Firefox extension - Night mode Demo",
+  "manifest_version": 2,
+  "name": "Night Mode Demo",
+  "version": "1.0",
+
+  "applications": {
+  "gecko": {
+    "id": "demo@mydomain.com"
+  }
+},
+
+  "icons": {
+    "48": "icons/sun.svg"
+  },
+
+  "background": {
+    "scripts": ["night-mode-demo.js"]
+  },
+
+   "browser_action": {
+    "default_icon": {
+      "48": "icons/sun.svg"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.com/*"],
+      "js": ["night-mode-demo.js"]
+    }
+  ],
+  
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+
+}
